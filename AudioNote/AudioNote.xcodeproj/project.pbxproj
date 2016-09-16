@@ -46,6 +46,10 @@
 		2CBF41621D8B853500EED5F2 /* ANAccountGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBF41611D8B853500EED5F2 /* ANAccountGuide.m */; };
 		2CBF41651D8B88D000EED5F2 /* ANStartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBF41641D8B88D000EED5F2 /* ANStartVC.m */; };
 		2CBF41681D8BCC1100EED5F2 /* ANGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBF41671D8BCC1100EED5F2 /* ANGuideVC.m */; };
+		2CBF416A1D8BEA5F00EED5F2 /* accountPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CBF41691D8BEA5F00EED5F2 /* accountPlist.plist */; };
+		2CBF416D1D8BEED700EED5F2 /* ANAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBF416C1D8BEED700EED5F2 /* ANAccountModel.m */; };
+		2CBF41701D8C002300EED5F2 /* ANAccountFeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBF416F1D8C002300EED5F2 /* ANAccountFeedbackVC.m */; };
+		2CBF41731D8C004200EED5F2 /* ANAccountAboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBF41721D8C004200EED5F2 /* ANAccountAboutUsVC.m */; };
 		2CFC635C1D8704DD0076C033 /* UIView+UINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC635B1D8704DD0076C033 /* UIView+UINavigationController.m */; };
 		47BC3425139D3621ADA852F2 /* libPods-AudioNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67ADD2112DF3C9B3EEA3663A /* libPods-AudioNote.a */; };
 		8D031D641D879EC400290E39 /* ANDictationWEIBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D031D631D879EC400290E39 /* ANDictationWEIBottomView.m */; };
@@ -157,6 +161,13 @@
 		2CBF41641D8B88D000EED5F2 /* ANStartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStartVC.m; sourceTree = "<group>"; };
 		2CBF41661D8BCC1100EED5F2 /* ANGuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGuideVC.h; sourceTree = "<group>"; };
 		2CBF41671D8BCC1100EED5F2 /* ANGuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGuideVC.m; sourceTree = "<group>"; };
+		2CBF41691D8BEA5F00EED5F2 /* accountPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = accountPlist.plist; sourceTree = "<group>"; };
+		2CBF416B1D8BEED700EED5F2 /* ANAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAccountModel.h; sourceTree = "<group>"; };
+		2CBF416C1D8BEED700EED5F2 /* ANAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAccountModel.m; sourceTree = "<group>"; };
+		2CBF416E1D8C002300EED5F2 /* ANAccountFeedbackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAccountFeedbackVC.h; sourceTree = "<group>"; };
+		2CBF416F1D8C002300EED5F2 /* ANAccountFeedbackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAccountFeedbackVC.m; sourceTree = "<group>"; };
+		2CBF41711D8C004200EED5F2 /* ANAccountAboutUsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAccountAboutUsVC.h; sourceTree = "<group>"; };
+		2CBF41721D8C004200EED5F2 /* ANAccountAboutUsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAccountAboutUsVC.m; sourceTree = "<group>"; };
 		2CFC635A1D8704DD0076C033 /* UIView+UINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UINavigationController.h"; sourceTree = "<group>"; };
 		2CFC635B1D8704DD0076C033 /* UIView+UINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UINavigationController.m"; sourceTree = "<group>"; };
 		67ADD2112DF3C9B3EEA3663A /* libPods-AudioNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AudioNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,6 +323,10 @@
 				2C7432A01D8531C50010E094 /* ANAccountVC.m */,
 				2CBF41661D8BCC1100EED5F2 /* ANGuideVC.h */,
 				2CBF41671D8BCC1100EED5F2 /* ANGuideVC.m */,
+				2CBF416E1D8C002300EED5F2 /* ANAccountFeedbackVC.h */,
+				2CBF416F1D8C002300EED5F2 /* ANAccountFeedbackVC.m */,
+				2CBF41711D8C004200EED5F2 /* ANAccountAboutUsVC.h */,
+				2CBF41721D8C004200EED5F2 /* ANAccountAboutUsVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -597,12 +612,15 @@
 		8D61CE9B1D86883600BC6547 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2CBF41691D8BEA5F00EED5F2 /* accountPlist.plist */,
 				2C966CE61D8A764D009B9C49 /* ANAccount.h */,
 				2C966CE71D8A764D009B9C49 /* ANAccount.m */,
 				2C966CE91D8A7717009B9C49 /* ANAccountTool.h */,
 				2C966CEA1D8A7717009B9C49 /* ANAccountTool.m */,
 				2CBF41601D8B853500EED5F2 /* ANAccountGuide.h */,
 				2CBF41611D8B853500EED5F2 /* ANAccountGuide.m */,
+				2CBF416B1D8BEED700EED5F2 /* ANAccountModel.h */,
+				2CBF416C1D8BEED700EED5F2 /* ANAccountModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -699,6 +717,7 @@
 			files = (
 				2C7432831D8520A20010E094 /* Images.xcassets in Resources */,
 				2C9BDD751D8558C5003EAB11 /* MBProgressHUD.bundle in Resources */,
+				2CBF416A1D8BEA5F00EED5F2 /* accountPlist.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,9 +805,11 @@
 				2C7432971D8523E50010E094 /* AppDelegate.m in Sources */,
 				8D61CE9F1D86884A00BC6547 /* ANAccountTableViewCell.m in Sources */,
 				2C9BDD7B1D8558C5003EAB11 /* NSObject+MJKeyValue.m in Sources */,
+				2CBF41731D8C004200EED5F2 /* ANAccountAboutUsVC.m in Sources */,
 				2C9BDDA41D858D32003EAB11 /* UIBarButtonItem+Extension.m in Sources */,
 				2C9BDD6E1D8558C5003EAB11 /* UIButton+ImageTitleSpacing.m in Sources */,
 				8D031DAB1D87B6C500290E39 /* JKDBHelper.m in Sources */,
+				2CBF416D1D8BEED700EED5F2 /* ANAccountModel.m in Sources */,
 				2C966CE01D8A761A009B9C49 /* ANTabBar.m in Sources */,
 				2C9BDD771D8558C5003EAB11 /* MJFoundation.m in Sources */,
 				2C9BDDAA1D858E98003EAB11 /* NSDate+Extension.m in Sources */,
@@ -799,6 +820,7 @@
 				2CFC635C1D8704DD0076C033 /* UIView+UINavigationController.m in Sources */,
 				2C9BDD741D8558C5003EAB11 /* MBProgressHUD+Extension.m in Sources */,
 				2C8E85911D86542500B9B411 /* ANDictationWEIView.m in Sources */,
+				2CBF41701D8C002300EED5F2 /* ANAccountFeedbackVC.m in Sources */,
 				2CBF41621D8B853500EED5F2 /* ANAccountGuide.m in Sources */,
 				2C9BDD7A1D8558C5003EAB11 /* NSObject+MJCoding.m in Sources */,
 				8D031DAF1D87D4C100290E39 /* ANAudioTool.m in Sources */,

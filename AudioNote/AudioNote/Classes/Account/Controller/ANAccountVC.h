@@ -10,6 +10,6 @@
 
 @interface ANAccountVC : UIViewController
 
-
+@property (nonatomic, copy) NSString *plistName;
 @end
 

@@ -307,7 +307,10 @@
     ANAccount *account = [ANAccount accountWithDict:dictAccount];
     [ANAccountTool saveAccount:account];
     
+    
     //登录请求
+//    ANLoginVC *vcLogin = [ANLoginVC new];
+//    [self.navigationController pushViewController:vcLogin animated:YES];
     //登录成功之后
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     keyWindow.rootViewController = [ANBaseTabBarVC new];
@@ -319,7 +322,13 @@
     //注册页面
     
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+//    keyWindow.rootViewController = [ANBaseTabBarVC new];
     keyWindow.rootViewController = [ANRegisterVC new];
+
+//    ANRegisterVC *vcRegister = [ANRegisterVC new];
+//    [self presentViewController:vcRegister animated:YES completion:^{
+//        
+//    }];
 }
 - (void)tapGestureForgetPassword:(UITapGestureRecognizer *)tap {
     NSLog(@"tapGestureForgetPassword");

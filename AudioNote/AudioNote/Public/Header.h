@@ -76,6 +76,9 @@
 #import "ANGuideVC.h"
 #import <SystemConfiguration/SCNetworkReachability.h>
 #include <netinet/in.h>
+#import "ANAccountModel.h"
 
+#import "ANAccountFeedbackVC.h"
+#import "ANAccountAboutUsVC.h"
 
 #endif /* Header_h */

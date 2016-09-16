@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class ANAccountModel;
 @interface ANAccountTableViewCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *subtitle;
-
-
+@property (nonatomic, strong) ANAccountModel *model;
+@property (nonatomic, copy) NSString *index;
 @end

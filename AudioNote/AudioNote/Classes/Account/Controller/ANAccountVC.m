@@ -13,6 +13,8 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIButton *buttonLogout;
 @property (nonatomic, assign) NSInteger login;
+@property (nonatomic, strong) NSArray *arrayAccount;
+@property (nonatomic, strong) ANAccountTableViewCell *cell;
 
 @end
 
@@ -20,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _login = 0;
+    self.plistName = @"accountPlist";
     self.view.backgroundColor = RGB(49, 50, 53);
     [self configUILogin];
 }
@@ -51,12 +53,17 @@
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return self.arrayAccount.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ANAccountModel *model = self.arrayAccount[indexPath.row];
     ANAccountTableViewCell *cell = [ANAccountTableViewCell cellWithTableView:tableView];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
+    cell.model = model;
+    NSLog(@"index-@ld",indexPath.row);
+    cell.index = [NSString stringWithFormat:@"ld",indexPath.row];
+    _cell = cell;
+    return _cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return kANAccountVCHeight;
@@ -64,18 +71,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%ld",indexPath.row);
     if (indexPath.row == 0) {
-        return;
-    } else if (indexPath.row == 1) {
         NSLog(@"自动同步");
-    } else if (indexPath.row == 2) {
+    } else if (indexPath.row == 1) {
+        ANAccountFeedbackVC *vcFeedBack = [ANAccountFeedbackVC new];
+        [self.navigationController pushViewController:vcFeedBack animated:YES];
         NSLog(@"问题反馈");
-    } else if (indexPath.row == 3) {
+    } else if (indexPath.row == 2) {
         NSLog(@"关于");
+        ANAccountAboutUsVC *vcAboutUs = [ANAccountAboutUsVC new];
+        [self.navigationController pushViewController:vcAboutUs animated:YES];
     } else {
         return;
     }
 }
 #pragma mark -lazy
+#pragma mark 退出登录
 - (UIButton *)buttonLogout {
     if (!_buttonLogout) {
         _buttonLogout =[[UIButton alloc]init];
@@ -85,6 +95,26 @@
         [_buttonLogout setBackgroundColor:RGB(67, 73, 77)];
     }
     return _buttonLogout;
+}
+#pragma mark 数据源集合
+- (NSArray *)arrayAccount {
+    if (_arrayAccount == nil) {
+        //读取plist数据
+        NSArray *dictArr = [[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@.plist",_plistName] ofType:nil]] lastObject][@"items"];
+        //创建可变数据
+        NSMutableArray *arrM = [NSMutableArray arrayWithCapacity:dictArr.count];
+        for (NSDictionary *dict in dictArr) {
+            ANAccountModel *model = [ANAccountModel accountWithDict:dict];
+            [arrM addObject:model];
+        }
+        _arrayAccount = arrM;
+    }
+    return _arrayAccount;
+}
+
+-(void)setPlistName:(NSString *)plistName {
+    //获取plist 数据
+    _plistName = plistName;
 }
 
 - (void)buttonLogoutAction:(id)sender {
