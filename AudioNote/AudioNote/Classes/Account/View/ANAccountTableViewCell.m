@@ -82,16 +82,6 @@
     }
     _labelTitle.text = [NSString stringWithFormat:@"%@",model.title];
     [_imageViewRight setImage:[UIImage imageNamed:model.accessoryTypeName]];
-    if ([self.index isEqualToString:@"0"]) {
-        self.labelSubTitle.hidden = YES;
-    } else {
-        self.labelSubTitle.hidden = NO;
-    }
-    NSLog(@"index%@",self.index);
     _labelSubTitle.text = model.subTitle;
 }
--(void)setIndex:(NSString *)index {
-    _index = index;
-}
-
 @end

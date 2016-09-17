@@ -49,6 +49,8 @@ NSLog(@"applicationDidEnterBackground程序进入后台");
     self.window.backgroundColor = COLOR_WHITE;
     [self.window makeKeyAndVisible];
     self.window.rootViewController = [[ANStartVC alloc]init];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
 }
 #pragma mark 获取录音权限
 - (void)configAudio {

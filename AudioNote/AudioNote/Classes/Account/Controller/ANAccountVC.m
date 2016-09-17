@@ -28,8 +28,8 @@
 }
 
 - (void)configUILogin {
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, (kANAccountVCHeight*5)) style:UITableViewStylePlain];
+
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, (kANAccountVCHeight*self.arrayAccount.count)) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.backgroundColor = RGB(49, 50, 53);
@@ -60,8 +60,6 @@
     ANAccountTableViewCell *cell = [ANAccountTableViewCell cellWithTableView:tableView];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.model = model;
-    NSLog(@"index-@ld",indexPath.row);
-    cell.index = [NSString stringWithFormat:@"ld",indexPath.row];
     _cell = cell;
     return _cell;
 }

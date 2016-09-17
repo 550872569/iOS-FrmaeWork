@@ -14,5 +14,4 @@
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @property (nonatomic, strong) ANAccountModel *model;
-@property (nonatomic, copy) NSString *index;
 @end

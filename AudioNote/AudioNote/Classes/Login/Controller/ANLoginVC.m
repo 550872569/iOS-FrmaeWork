@@ -20,6 +20,7 @@
     
     self.view.backgroundColor = RGB(49, 50, 53);
     [self configUI];
+    [self configNavigationBar];
 }
 
 - (void)configUI {
@@ -301,6 +302,8 @@
 
 - (void)buttonLoginAction:(id)sender {
     NSLog(@"buttonLoginAction");
+    
+//    [self checkTextFieldInput];
     [_textFieldAccount resignFirstResponder];
     [_textFieldPassword resignFirstResponder];
     NSMutableDictionary *dictAccount = [NSMutableDictionary dictionary];
@@ -330,6 +333,30 @@
 //        
 //    }];
 }
+
+- (void)checkTextFieldInput {
+    NSString *msg =@"";
+    if ([_textFieldAccount.text isEqualToString:@"" ]|| _textFieldAccount.text ==NULL || _textFieldAccount.text.length < 11) {
+        msg = @"账号不能为空";
+        
+        if (msg.length !=0) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示 " message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alertView show];
+            return;
+        }
+    }
+    
+    if ( [_textFieldPassword.text isEqualToString:@"" ]|| _textFieldPassword.text ==NULL) {
+        msg = @"密码不能为空";
+        if (msg.length !=0) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示 " message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alertView show];
+            return;
+        }
+    }
+    
+}
+
 - (void)tapGestureForgetPassword:(UITapGestureRecognizer *)tap {
     NSLog(@"tapGestureForgetPassword");
     [_textFieldAccount resignFirstResponder];
@@ -355,6 +382,20 @@
     NSLog(@"loginSina");
     [_textFieldAccount resignFirstResponder];
     [_textFieldPassword resignFirstResponder];
+}
+- (void)configNavigationBar {
+    UINavigationBar *bar = [UINavigationBar appearance];
+    // 状态栏
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
+    // 2.设置导航栏文字属性
+    NSMutableDictionary *barAttrs = [NSMutableDictionary dictionary];
+    [barAttrs setObject:COLOR_WHITE forKey:UITextAttributeTextColor];
+    [barAttrs setObject:[NSValue valueWithUIOffset:UIOffsetMake(0, 0)] forKey:UITextAttributeTextShadowOffset];
+    [bar setTitleTextAttributes:barAttrs];
+    //    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"NavigationBarBackgroundIimage"] forBarMetrics:UIBarMetricsDefault];
+    //    [self.navigationBar setBarTintColor:COLOR_WHITE];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
 }
 
 @end

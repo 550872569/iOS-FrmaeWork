@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
     [self chooseRootVC];
+    [self configNavigationBar];
 }
 
 - (void)chooseRootVC {
@@ -27,6 +28,17 @@
     ANAccount *account = [ANAccountTool account];
     //获取沙盒中存储的引导页信息
     ANAccountGuide *guide = [ANAccountTool accountGuide];
+    
+//    //拿到当前app 的版本
+//    NSString *appViersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+//    //沙盒中的版本  从沙盒中获取版本
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    NSString *curViewsion = [defaults objectForKey:kAppVersion];
+//    //保存当前版本app 值
+//    [defaults setObject:appViersion forKey:kAppVersion];
+//    //同步提交
+//    [defaults synchronize];
+
     /*
      1. 进入引导页
      2. 开始
@@ -49,14 +61,25 @@
         //进入引导页
         keyWindow.rootViewController = [ANGuideVC new];
     }
-
-
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 
+- (void)configNavigationBar {
+    UINavigationBar *bar = [UINavigationBar appearance];
+    // 状态栏
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
+    // 2.设置导航栏文字属性
+    NSMutableDictionary *barAttrs = [NSMutableDictionary dictionary];
+    [barAttrs setObject:COLOR_WHITE forKey:UITextAttributeTextColor];
+    [barAttrs setObject:[NSValue valueWithUIOffset:UIOffsetMake(0, 0)] forKey:UITextAttributeTextShadowOffset];
+    [bar setTitleTextAttributes:barAttrs];
+//    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"NavigationBarBackgroundIimage"] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationBar setBarTintColor:COLOR_WHITE];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
+}
 
 @end

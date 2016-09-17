@@ -31,6 +31,8 @@
 #define kPathAccountFile [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.data"]
 #pragma mark 文件目录-GuideAccountFile-引导页
 #define kPathGuideAccountFile [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"guideAccount.data"]
+#define kAppVersion @"AppVersion"
+
 
 
 #endif /* PathMacros_h */

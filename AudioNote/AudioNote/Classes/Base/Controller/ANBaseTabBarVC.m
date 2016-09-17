@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self.tabBar setBackgroundImage:[UIImage imageNamed:@"TabbarBackgroundImage"]];
+    [self.tabBar setBackgroundColor:RGB(85, 90, 100)];
     self.view.backgroundColor = RGB(49, 50, 53);
     [self configUI];
 //    [self configTabbar];
